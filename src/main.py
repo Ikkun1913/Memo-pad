@@ -19,6 +19,7 @@ root.columnconfigure(0, weight=1)
 root.rowconfigure(0, weight=1)
 
 # 保存
+root.bind('<Control-KeyPress-s>', save_file_as)
 def save_file_as(event=None):
     """名前を付けて保存する"""
     f_type = [('Text', '*.txt')]
@@ -30,9 +31,8 @@ def save_file_as(event=None):
         with open(file_path, "w") as f:
             f.write(text_widget.get("1.0", "end-1c"))
 
-    return
+return
 
-root.bind('<Control-KeyPress-s>', save_file_as)
 
 #メニューバーの設定(ファイル)
 menubar = tk.Menu(self.root)                                  
